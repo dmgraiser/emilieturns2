@@ -1,11 +1,46 @@
 <div class="container">
 	<div class="jumbotron">
-	  <h1>Emilie Turns 2!!</h1>
-	  <br />
-	  <p><a class="btn btn-primary btn-lg rsvp-btn" href="#" role="button">RSVP Here</a></p>
+		<div class="row">
+			<div class="col-md-5">
+			</div>
+			<div class="col-md-7">
+			  <h1>Emilie Turns 2!!</h1>
+			  <br />
+			  <p>
+			  	<%= link_to 'RSVP Here', new_rsvp_path, :class => 'btn btn-primary btn-lg rsvp-btn' %>
+			  </p>
+			</div>
+		</div>
 	</div>
 </div>
 
-<div class="container minnie">
-	<%= image_tag 'minnie.png', class: 'minnie-img' %>
+
+
+<div class="row">
+	<div class="col-md-5">
+		<div class="minnie">
+			<%= image_tag 'minnie.png', class: 'minnie-img' %>
+		</div>
+	</div>
+	<div class="col-md-7">
+		<% @rsvps.each do |r| %>
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title"><strong><%= r.name %></strong></h3>
+			  </div>
+			  <div class="panel-body">
+			    <strong>Are you coming?</strong>
+			    <% if r.attending == true %>
+			    	I'll be there!
+			    <% else %>
+			    	I can't make it
+			    <% end %>
+			    <br />
+			    <% if r.comment.length > 0 %>
+			    	<strong>Comment:</strong>	<%= r.comment %>
+			    <% end %>
+			  </div>
+			</div>
+		<% end %>
+	</div>
 </div>

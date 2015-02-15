@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'emilie#index'
 
+  get 'new_rsvp' => 'rsvps#new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

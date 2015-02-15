@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RsvPsControllerTest < ActionController::TestCase
+class RsvpsControllerTest < ActionController::TestCase
   setup do
     @rsvp = rsvps(:one)
   end
@@ -18,7 +18,7 @@ class RsvPsControllerTest < ActionController::TestCase
 
   test "should create rsvp" do
     assert_difference('Rsvp.count') do
-      post :create, rsvp: { comment: @rsvp.comment, guest: @rsvp.guest, rsvp: @rsvp.rsvp }
+      post :create, rsvp: { attending: @rsvp.attending, comment: @rsvp.comment, name: @rsvp.name }
     end
 
     assert_redirected_to rsvp_path(assigns(:rsvp))
@@ -35,7 +35,7 @@ class RsvPsControllerTest < ActionController::TestCase
   end
 
   test "should update rsvp" do
-    patch :update, id: @rsvp, rsvp: { comment: @rsvp.comment, guest: @rsvp.guest, rsvp: @rsvp.rsvp }
+    patch :update, id: @rsvp, rsvp: { attending: @rsvp.attending, comment: @rsvp.comment, name: @rsvp.name }
     assert_redirected_to rsvp_path(assigns(:rsvp))
   end
 

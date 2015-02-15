@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :guest %><br>
-    <%= f.text_field :guest %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :rsvp %><br>
-    <%= f.check_box :rsvp %>
+    <%= f.label :attending %><br>
+    <%= f.check_box :attending %>
   </div>
   <div class="field">
     <%= f.label :comment %><br>
     <%= f.text_area :comment %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn btn-primary' %>
   </div>
 <% end %>

@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214034059) do
+ActiveRecord::Schema.define(version: 20150215025133) do
 
   create_table "rsvps", force: :cascade do |t|
-    t.string   "guest"
-    t.boolean  "rsvp"
+    t.string   "name"
+    t.boolean  "attending"
     t.text     "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

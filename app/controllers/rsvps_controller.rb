@@ -1,4 +1,4 @@
-class RsvPsController < ApplicationController
+class RsvpsController < ApplicationController
   before_action :set_rsvp, only: [:show, :edit, :update, :destroy]
 
   # GET /rsvps
@@ -69,6 +69,6 @@ class RsvPsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rsvp_params
-      params.require(:rsvp).permit(:guest, :rsvp, :comment)
+      params.require(:rsvp).permit(:name, :attending, :comment)
     end
 end
