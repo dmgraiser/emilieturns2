@@ -23,7 +23,7 @@
 		</div>
 	</div>
 	<div class="col-md-7">
-		<% @rsvps.each do |r| %>
+		<% @rsvps.reverse.each do |r| %>
 			<div class="panel panel-default">
 			  <div class="panel-heading">
 			    <h3 class="panel-title"><strong><%= r.name %></strong></h3>
@@ -38,8 +38,14 @@
 			    <br />
 			    <% if r.comment.length > 0 %>
 			    	<strong>Comment:</strong>	<%= r.comment %>
+			    	<br />
 			    <% end %>
+			    <br />
+			    <div style="font-size:.75em"><%= time_ago_in_words(r.created_at) %> ago</div>
 			  </div>
+			  <!-- <div class="panel-footer" style="font-size:.75em">
+			  	Updated <%= time_ago_in_words(r.created_at) %> ago
+			  </div> -->
 			</div>
 		<% end %>
 	</div>
