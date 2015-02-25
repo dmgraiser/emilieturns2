@@ -15,7 +15,7 @@
  */
 
 body{
-	background: url(<%= asset_path "white_dots_on_black.jpg" %>) no-repeat;
+	background: url(<%= asset_path "white_dots_on_black.jpg" %>) no-repeat fixed;
 	background-size: cover;
 } 
 
@@ -45,13 +45,27 @@ body{
 
 .jumbotron h1{
 	text-align: right;
+}
+
+h1{
 	font-family: 'Lobster', cursive;
 	font-size: 6.5em;
 }
 
-.panel-title{
+.panel-title, .lobster{
 	font-family: 'Lobster', cursive;
 	font-size: 2.5em;
+}
+
+.lobster{
+	font-family: 'Lobster', cursive;
+	font-size: 2.5em;
+	line-height: 1.3em;
+}
+
+.small-lobster{
+	font-family: 'Lobster', cursive;
+	font-size: .8em;
 }
 
 .panel-body{
@@ -64,13 +78,11 @@ body{
 	font-size: 1.6em;
 }
 
-.rsvp{
-	background-color: white;
+.col-md-6{
+	background: white;
+	border-radius: 5px;
 }
 
-/*@media screen and (min-width: 660px) {
-	.minnie-img	{
-		width: 50%;
-	}
+.center{
+	text-align: center;
 }
-*/
