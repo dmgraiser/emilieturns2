@@ -1,34 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="rsvp-index">  
+  <p id="notice"><%= notice %></p>
 
-<div class="container rsvp">
-  <h1>Listing Rsvps</h1>
+  <div class="container rsvp">
+    <h1>Listing RSVPs</h1>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Attending</th>
-        <th>Comment</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+    <div class="rsvp-count">
+      <%= @count %> People are coming<br />
+      <%= @party_pooper %> People aren't coming
+    </div>
 
-    <tbody>
-      <% @rsvps.each do |rsvp| %>
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= rsvp.name %></td>
-          <td><%= rsvp.attending %></td>
-          <td><%= rsvp.comment %></td>
-          <td><%= link_to 'Show', rsvp %></td>
-          <td><%= link_to 'Edit', edit_rsvp_path(rsvp) %></td>
-          <td><%= link_to 'Destroy', rsvp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th>Name</th>
+          <th>Attending</th>
+          <th>Comment</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <br>
+      <tbody>
+        <% @rsvps.each do |rsvp| %>
+          <tr>
+            <td><%= rsvp.name %></td>
+            <td><%= rsvp.attending %></td>
+            <td><%= rsvp.comment %></td>
+            <td><%= link_to 'Show', rsvp %></td>
+            <td><%= link_to 'Edit', edit_rsvp_path(rsvp) %></td>
+            <td><%= link_to 'Destroy', rsvp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <%= link_to 'New Rsvp', new_rsvp_path, :class => 'btn btn-primary' %>
-  <%= link_to 'Home', root_path, :class => 'btn btn-primary' %>
+    <br>
+
+    <%= link_to 'New Rsvp', new_rsvp_path, :class => 'btn btn-primary' %>
+    <%= link_to 'Home', root_path, :class => 'btn btn-primary' %>
+  </div>
 </div>
