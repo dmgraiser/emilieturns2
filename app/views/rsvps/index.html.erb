@@ -3,10 +3,11 @@
 
   <div class="container rsvp">
     <h1>Listing RSVPs</h1>
-
-    <div class="rsvp-count">
-      <%= @count %> People are coming<br />
-      <%= @party_pooper %> People aren't coming
+    <div class="panel">
+      <div class="rsvp-count panel-body">
+        <%= @count %> People are coming<br />
+        <%= @party_pooper %> People aren't coming
+      </div>
     </div>
 
     <table class="table">
@@ -15,6 +16,7 @@
           <th>Name</th>
           <th>Attending</th>
           <th>Comment</th>
+          <th>Head Count</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -25,6 +27,11 @@
             <td><%= rsvp.name %></td>
             <td><%= rsvp.attending %></td>
             <td><%= rsvp.comment %></td>
+            <td>
+              <% if rsvp.attending == true %>
+                <%= rsvp.head.to_i + 1 %>
+              <% end %>
+            </td>
             <td><%= link_to 'Show', rsvp %></td>
             <td><%= link_to 'Edit', edit_rsvp_path(rsvp) %></td>
             <td><%= link_to 'Destroy', rsvp, method: :delete, data: { confirm: 'Are you sure?' } %></td>

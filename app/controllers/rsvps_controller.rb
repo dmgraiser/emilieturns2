@@ -13,6 +13,9 @@ class RsvpsController < ApplicationController
       else
         @party_pooper +=1
       end
+      if r.head.to_i > 0
+        @count += r.head
+      end
     end
   end
 
@@ -78,6 +81,6 @@ class RsvpsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rsvp_params
-      params.require(:rsvp).permit(:name, :attending, :comment)
+      params.require(:rsvp).permit(:name, :attending, :comment, :head)
     end
 end

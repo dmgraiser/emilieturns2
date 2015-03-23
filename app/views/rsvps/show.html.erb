@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container rsvp">
+<div class="container rsvp-index">
 	<p>
 	  <strong>Name:</strong>
 	  <%= @rsvp.name %>
@@ -14,6 +14,11 @@
 	<p>
 	  <strong>Comment:</strong>
 	  <%= @rsvp.comment %>
+	</p>
+
+	<p>
+	  <strong>Additional Head Count:</strong>
+	  <%= @rsvp.head.to_i %>
 	</p>
 
 	<%= link_to 'Edit', edit_rsvp_path(@rsvp) %> |

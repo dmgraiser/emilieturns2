@@ -36,6 +36,10 @@
 			    	I can't make it
 			    <% end %>
 			    <br />
+			    <% if r.attending == true %>
+			    	<strong>Head count:</strong> <%= r.head.to_i + 1 %>
+			    	<br />
+			    <% end %>
 			    <% if r.comment.length > 0 %>
 			    	<strong>Comment:</strong>	<%= r.comment %>
 			    	<br />

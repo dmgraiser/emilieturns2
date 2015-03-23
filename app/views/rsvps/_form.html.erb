@@ -16,9 +16,13 @@
       <%= f.text_field :name, class: "form-control input-lg", placeholder: "Name" %>
     </div>
     <div class="field col-xs-8 col-xs-offset-2 center lobster">
-      <%= f.label "Are you attending?" %><br>
+      <%= f.label "Are you attending?" %><br />
       <%= radio_button("rsvp", "attending", true) %><span class="small-lobster"> Yes</span><br /> 
       <%= radio_button("rsvp", "attending", false) %><span class="small-lobster"> No</span>
+    </div>
+    <div class="field col-xs-8 col-xs-offset-2 center lobster">
+      <%= f.label "How many others will be joining you?" %><br />
+      <%= f.number_field :head, class: "form-control input-lg" %>
     </div>
     <div class="field col-xs-8 col-xs-offset-2">
       <%= f.text_area :comment, class: "form-control input-lg", placeholder: "Comment" %>
