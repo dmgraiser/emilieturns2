@@ -19,10 +19,14 @@ $(document).ready(function (){
     function initialize() {
     	var myLatLng = new google.maps.LatLng(34.083308, -84.627842);
     	var image = "<%= asset_path 'map_icon.png' %>"
+    	
+    	var contentString = '<h2>Party!!</h2>' + '<p>543 Olympic Way<br />Acworth, GA 30102</p>';
+
       var mapOptions = {
 	      center: myLatLng,
 	      zoom: 16,
-	      scrollwheel: false
+	      scrollwheel: false,
+	      mapTypeId: google.maps.MapTypeId.HYBRID
 	    };
         
       var map = new google.maps.Map(document.getElementById('map-canvas'),
@@ -30,9 +34,17 @@ $(document).ready(function (){
 			var marker = new google.maps.Marker({
 		    position: myLatLng,
 		    map: map,
-		    title:"Hello World!",
+		    title:"Fun Zone!",
 		    icon: image
-			});   
+			});  
+
+			var infowindow = new google.maps.InfoWindow({
+		    content: contentString
+		  });
+
+		  google.maps.event.addListener(marker, 'click', function() {
+		    infowindow.open(map,marker);
+		  }); 
     }
       
     google.maps.event.addDomListener(window, 'load', initialize);

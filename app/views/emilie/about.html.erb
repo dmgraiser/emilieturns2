@@ -1,13 +1,16 @@
 <div class="container center">
 	<div class="panel panel-default">	
 		<div class="panel-body">
-			<h1>All about the party</h1>
+			<h1 id="about_title">All about the party</h1>
 			<br />
 			<span>
 				Please help us celebrate Emilie's 2nd birthday on Saturday, April 18th. 
 			<br />
 				There will be food, fun, and even A BOUNCY HOUSE!
 			</span>
+			<div class="right">
+				<%= link_to "Home", root_path, :class => 'btn btn-primary btn-lg rsvp-btn' %>
+			</div>
 		</div>
 	</div>
 </div>
@@ -19,6 +22,9 @@
 					<h3 class="panel-title">Location</h3>
 				</div>
 				<div class="panel-body">
+					543 Olympic Way<br />
+					Acworth, GA 30102<br />
+					404-394-5121
 					<div id="map-canvas"></div>
 				</div>
 			</div>
@@ -30,8 +36,13 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">About Emilie</h3>
 				</div>
-				<div class="panel-body">
-					Emilie's info goes here
+				<div class="panel-body space">
+					<strong>Weight:</strong> 30lbs<br />
+					<strong>Height:</strong> 2' 5"<br />
+					<strong>Favorite Foods:</strong> fruit, avocado, cookies, jelly beans, anything I can dip!<br />
+					<strong>My favorite characters:</strong> Elmo and Minnie Mouse<br />
+					<strong>I love:</strong> Swinging, going down slides, bubble baths, swimming, jumping, Clubber, balloons, horses<br />
+					<strong>Looking forward to becoming a big sister!</strong>
 				</div>
 			</div>
 		</div>
